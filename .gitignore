@@ -1,0 +1,8 @@
+*.py[cod]
+.emacs.desktop
+__pycache__/
+.#*.*
+\#*#
+*.log
+env/
+*/db.sqlite3
