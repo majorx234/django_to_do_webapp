@@ -13,7 +13,7 @@ class List(models.Model):
     def __str__(self):
         return self.list_text
 
-class task(models.Model):
+class Task(models.Model):
     shorttext = models.CharField(max_length=140)
     longtext = models.TextField(blank=True)
     till_when_date = models.DateField(verbose_name="till when")
