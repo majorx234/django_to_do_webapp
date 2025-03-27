@@ -1,7 +1,27 @@
- <!DOCTYPE html>
-<html>
-  <body>
+{% block content %}
     <h1>detail</h1>
     <p>todo here we need a form</p>
-  </body>
-</html>
+    <form id="todo_create" action="" method="post">
+      <div>
+      {{ form.shorttext|as_crispy_field }}
+      </div>
+    </div>
+    <div>
+      <div>
+        {{ form.longtext|as_crispy_field }}
+      </div>
+    </div>
+    <div>
+      <div>
+        {{ form.till_when_test|as_crispy_field }}
+      </div>
+      <div>
+        {{ form.status|as_crispy_field }}
+      </div>
+      <div>
+        {{ form.list_items|as_crispy_field }}
+      </div>
+      <button type="submit" class="btn btn-primary">Speichern</button>
+    </form>
+{% endblock %}
+
