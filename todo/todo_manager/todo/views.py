@@ -1,24 +1,17 @@
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import View
+from django.shortcuts import render
 
 from todo.models import Task
-from todo.forms import ToDoForm
+from todo.tables import ToDoTable
 
-# Create your views here.
-class ToDoCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
-    permission_required = 'todo.add_task'
+
+class MainView(View):
+    # login_url = '/accounts/login/'
+    # permission_required = 'todo.view_todo'
+    # filterset_class = TaskFilter
+    template_name = 'current_todo.html'
     model = Task
-    template_name = 'detail.html'
-    form_class = ToDoForm
-    success_url = '/'
-
-    def get_context_data(self, **kwargs):
-        context['TITLE_SHORT'] = 'Edit'
-        context['TITLE_LONG'] = 'Edit a task'
-        return context
-
-class ToDoListView(LoginRequiredMixin, PermissionRequiredMixin):
-    permission_required = 'Aufgaben.view_aufgabe'
-    model = Aufgabe
-    template_name = 'liste.html'
     table_class = ToDoTable
+
+    def get(self, request, *args, **kwargs):
+        return render(request,'current_todo.html')
