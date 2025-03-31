@@ -3,23 +3,23 @@
     <p>todo here we need a form</p>
     <form id="todo_create" action="" method="post">
       <div>
-      {{ form.shorttext|as_crispy_field }}
+      {{ form.shorttext }}
       </div>
     </div>
     <div>
       <div>
-        {{ form.longtext|as_crispy_field }}
+        {{ form.longtext }}
       </div>
     </div>
     <div>
       <div>
-        {{ form.till_when_test|as_crispy_field }}
+        {{ form.till_when_test }}
       </div>
       <div>
-        {{ form.status|as_crispy_field }}
+        {{ form.status }}
       </div>
       <div>
-        {{ form.list_items|as_crispy_field }}
+        {{ form.list_items }}
       </div>
       <button type="submit" class="btn btn-primary">Speichern</button>
     </form>
