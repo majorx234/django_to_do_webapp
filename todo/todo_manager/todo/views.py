@@ -41,4 +41,6 @@ class MainView(View):
     table_class = ToDoTable
 
     def get(self, request, *args, **kwargs):
-        return render(request, 'current_todo.html')
+        mydict = {}
+        mydict['test'] = "foo"
+        return render(request, 'current_todo.html', mydict)
