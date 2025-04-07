@@ -1,0 +1,26 @@
+{% block content %}
+    <h1>update</h1>
+    <p>todo here we need a form</p>
+    <form id="todo_create" action="" method="POST" enctype="multipart/form-data" >
+      <div>
+      {{ form.shorttext }}
+      </div>
+    </div>
+    <div>
+      <div>
+        {{ form.longtext }}
+      </div>
+    </div>
+    <div>
+      <div>
+        {{ form.till_when_test }}
+      </div>
+      <div>
+        {{ form.status }}
+      </div>
+      <div>
+        {{ form.list_items }}
+      </div>
+      <button type="submit">Update</button>
+    </form>
+{% endblock %}

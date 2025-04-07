@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, DetailView, View
+from django.views.generic import CreateView, DetailView, UpdateView, View
 from django_tables2.views import SingleTableMixin
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -36,6 +36,14 @@ class ToDoListView(DetailView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, self.context)
+
+
+class ToDoUpdateView(UpdateView):
+    model = Task
+    template_name = 'todo_update.html'
+    form_class = ToDoForm
+    # fields = [""]
+    success_url = '/'
 
 
 class MainView(View):
