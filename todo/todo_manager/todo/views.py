@@ -27,9 +27,15 @@ class ToDoListView(DetailView):
     # permission_required = 'todo.view_tasks'
     model = Task
     template_name = 'list.html'
+    context = {
+        "my_item_list": [(1, "fo"), (2, "foo"), (3, "fooo"),
+                         (4, "foooo"), (5, "fooooo"), (6, "foooooo"),
+                         (7, "fooooooo")],
+    }
     #    table_class = ToDoTable
+
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+        return render(request, self.template_name, self.context)
 
 
 class MainView(View):

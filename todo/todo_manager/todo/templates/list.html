@@ -1,4 +1,15 @@
 {% block content %}
     <h1>list</h1>
     <p>list element</p>
+    <ul>
+        {% for idx, value in my_item_list %}
+        <li>
+            <p>{{ forloop.counter0 }}</p>
+            <p>{{ idx }}</p>
+            <p>{{ value }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+
+
 {% endblock %}
