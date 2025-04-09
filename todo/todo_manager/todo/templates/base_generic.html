@@ -8,13 +8,18 @@
 
     <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap_datetimepicker/css/bootstrap-datetimepicker.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'bootstrap_datepicker_plus/css/datepicker-widget.css' %}" type="text/css">
   </head>
   <body>
   {% block content %}
   {% endblock %}
 
+  <script type="text/javascript" src="{% static 'bootstrap/jquery-3.7.1.slim.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'bootstrap/popper-1.16.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'bootstrap/moment-with-locales.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'bootstrap_datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'bootstrap_datepicker_plus/js/datepicker-widget.js' %}"></script>
   </body>
 </html>
