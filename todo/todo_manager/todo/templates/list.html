@@ -2,12 +2,17 @@
     <h1>list</h1>
     <p>list element</p>
     <ul>
-        {% for idx, value in my_item_list %}
+        {% for object in object_list %}
         <li>
             <p>{{ forloop.counter0 }}</p>
-            <p>{{ idx }}</p>
-            <p>{{ value }}</p>
+            <p>{{ object.shorttext }}</p>
+            <p>{{ object.longtext }}</p>
+            <p>{{ object.till_when_date }}</p>
+            <p>{{ object.status }}</p>
+            <p>{{ object.list_items }}</p>
         </li>
+            {% empty %}
+        <li>No objects yet.</li>
         {% endfor %}
     </ul>
 

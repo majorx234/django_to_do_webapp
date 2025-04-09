@@ -27,4 +27,4 @@ class Task(models.Model):
         return self.shorttext
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'pk', self.pk})
+        return reverse('detail', kwargs={'id', self.id})

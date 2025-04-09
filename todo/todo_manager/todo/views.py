@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, DetailView, UpdateView, View
+from django.views.generic import CreateView, DetailView, UpdateView, View, ListView
 from django_tables2.views import SingleTableMixin
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -35,19 +35,11 @@ class ToDoDetailView(DetailView):
     template_name = 'detail.html'
 
 
-class ToDoListView(DetailView):
+class ToDoListView(ListView):
     # permission_required = 'todo.view_tasks'
     model = Task
     template_name = 'list.html'
-    context = {
-        "my_item_list": [(1, "fo"), (2, "foo"), (3, "fooo"),
-                         (4, "foooo"), (5, "fooooo"), (6, "foooooo"),
-                         (7, "fooooooo")],
-    }
     #    table_class = ToDoTable
-
-    def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, self.context)
 
 
 class ToDoUpdateView(UpdateView):

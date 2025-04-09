@@ -3,23 +3,28 @@
     <p>todo here we need a form</p>
     <div>
       <div>
-        {{ form.shorttext }}
+        {{ object.id }}
       </div>
     </div>
     <div>
       <div>
-        {{ form.longtext }}
+        {{ object.shorttext }}
       </div>
     </div>
     <div>
       <div>
-        {{ form.till_when_test }}
+        {{ object.longtext }}
+      </div>
+    </div>
+    <div>
+      <div>
+        {{ object.till_when_date }}
       </div>
       <div>
-        {{ form.status }}
+        {{ object.status }}
       </div>
       <div>
-        {{ form.list_items }}
+        {{ object.list_items }}
       </div>
     </div>
 {% endblock %}
