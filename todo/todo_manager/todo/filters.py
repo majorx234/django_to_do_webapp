@@ -14,9 +14,9 @@ class TaskFilter(FilterSet):
                      "showClose": True,
                      "showClear": True,
                      "showTodayButton": True,
-                     }
-        ).start_of('till_when'))
-
+                     },
+            range_from='till_when'
+        ))
     till_when_date__lte = DateFilter(
         field_name='till_when_date',
         lookup_expr='lte',
@@ -27,8 +27,9 @@ class TaskFilter(FilterSet):
                      "showClose": True,
                      "showClear": True,
                      "showTodayButton": True,
-                     }
-        ).end_of('till_when'))
+                     },
+            range_from='till_when'
+        ))
 
     class Meta:
         model = Task
