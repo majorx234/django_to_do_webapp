@@ -5,7 +5,7 @@ from django.utils.timezone import datetime
 from todo.models import Task
 
 
-class ToDoTable(Table):
+class TaskTable(Table):
     id = Column(visible=False)
     longtext = Column(visible=False)
 

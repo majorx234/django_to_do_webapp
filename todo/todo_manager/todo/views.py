@@ -1,11 +1,12 @@
-from django.views.generic import CreateView, DetailView, UpdateView, View, ListView
+from django.views.generic import CreateView, DetailView, \
+                                 UpdateView, ListView
 from django_tables2.views import SingleTableMixin
-from django.http import HttpResponse
-from django.shortcuts import render
+from django_filters.views import FilterView
 
 from todo.models import Task
 from todo.forms import ToDoForm
-from todo.tables import ToDoTable
+from todo.tables import TaskTable
+from todo.filters import TaskFilter
 
 
 # Create your views here.
@@ -19,7 +20,6 @@ class ToDoCreateView(CreateView):
     def form_valid(self, form):
         # This method is called when valid form data has been POSTed.
         # It should return an HttpResponse.
-
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
@@ -50,15 +50,9 @@ class ToDoUpdateView(UpdateView):
     success_url = '/'
 
 
-class MainView(View):
-    # login_url = '/accounts/login/'
-    # permission_required = 'todo.view_todo'
-    # filterset_class = TaskFilter
+class MainView(SingleTableMixin, FilterView):
+    filterset_class = TaskFilter
     template_name = 'current_todo.html'
     model = Task
-    table_class = ToDoTable
+    table_class = TaskTable
 
-    def get(self, request, *args, **kwargs):
-        mydict = {}
-        mydict['test'] = "foo"
-        return render(request, 'current_todo.html', mydict)

@@ -1,5 +1,13 @@
+{% extends 'base_generic.html' %}
+{% load django_tables2 %}
+
 {% block content %}
     <h1>todo</h1>
     <p>current todo</p>
-    <ul><li>{{ test }}</li></ul>
+   <!-- Tabellenausgabe -->
+    <div class="row mx-0 mt-2">
+        <div class="col mx-0">
+            {% render_table table %}
+        </div>
+    </div>
 {% endblock %}

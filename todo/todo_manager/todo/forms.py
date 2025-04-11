@@ -4,7 +4,7 @@ from bootstrap_datepicker_plus.widgets import DatePickerInput
 
 
 class ToDoForm(ModelForm):
-    till_when_date = DateField(input_formats=["%Y-%m-%d"], label="till when",
+    till_when_date = DateField(input_formats=["%Y-%m-%d"], label="till_when",
                                widget=DatePickerInput(
                                    options={
                                        "format": "YYYY-MM-DD",
@@ -23,6 +23,7 @@ class ToDoForm(ModelForm):
             'status',
             'list_items',
         )
+
     def print_todo(self):
         print("print_todo(): here")
         pass
