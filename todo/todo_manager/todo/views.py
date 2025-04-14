@@ -35,11 +35,12 @@ class ToDoDetailView(DetailView):
     template_name = 'detail.html'
 
 
-class ToDoListView(ListView):
+class ToDoListView(SingleTableMixin, FilterView):
     # permission_required = 'todo.view_tasks'
-    model = Task
     template_name = 'list.html'
-    #    table_class = ToDoTable
+    model = Task
+    filterset_class = TaskFilter
+    table_class = TaskTable
 
 
 class ToDoUpdateView(UpdateView):

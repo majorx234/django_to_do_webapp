@@ -1,20 +1,65 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% load django_tables2 %}
+
 {% block content %}
-    <h1>list</h1>
+  <h1>list</h1>
     <p>list element</p>
-    <ul>
-        {% for object in object_list %}
-        <li>
-            <p>{{ forloop.counter0 }}</p>
-            <p>{{ object.shorttext }}</p>
-            <p>{{ object.longtext }}</p>
-            <p>{{ object.till_when_date }}</p>
-            <p>{{ object.status }}</p>
-            <p>{{ object.list_items }}</p>
-        </li>
-            {% empty %}
-        <li>No objects yet.</li>
-        {% endfor %}
-    </ul>
-
-
-{% endblock %}
+      <div class="row">
+        <div class="col">
+          <form id="Aufgaben_search" action="" method="get">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row mx-2 mt-2">
+                        <div class="col">
+                          {{ filter.form.shorttext__icontains }}
+                        </div>
+                      </div>
+                        <div class="row mx-2 mt-2">
+                          <div class="col">
+                            {{ filter.form.status }}
+                          </div>
+                          <div class="col">
+                            {{ filter.form.list_items }}
+                          </div>
+                        </div>
+                      <div class="row mx-2 mt-2">
+                        <div class="col">
+                          {{ filter.form.till_when_date__gte }}
+                        </div>
+                        <div class="col">
+                          {{ filter.form.till_when_date__lte }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- action buttons -->
+            <div class="row  mx-0 mt-2">
+              <div class="col bg-light p-2 m-1">
+                <ul class="navbar-nav navbar-expand align-items-center justify-content-end">
+                  <li class="nav-item pl-3">
+                    <button type="button" class="btn btn-secondary" data-toggle="modal"
+                            data-target="#cancelPopup">close</button>
+                  </li>
+                  <li class="nav-item pl-3 mr-3">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- table ooutput -->
+      <div class="row mx-0 mt-2">
+        <div class="col mx-0">
+            {% render_table table %}
+        </div>
+    </div>
+{% endblock content %}
