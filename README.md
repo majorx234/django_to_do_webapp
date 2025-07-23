@@ -4,12 +4,14 @@
 - nothing usefule yet
 
 # initialize database
+- change dir: `todo\todo_manager`
+- init: `python manage.py migrate`
 - `python manage.py shell`
 ```python
 from todo.models import Status
 Status.objects.create(status_text="BackLog").save()
 Status.objects.create(status_text="InProgress").save()
-Status.objects.create(status_text="Done").save)
+Status.objects.create(status_text="Done").save()
 from todo.models import List
 List.objects.create(list_text="FoodList").save()
 List.objects.create(list_text="BookList").save()
