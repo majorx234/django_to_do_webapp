@@ -2,11 +2,13 @@ from django.views.generic import CreateView, DetailView, \
                                  UpdateView, ListView
 from django_tables2.views import SingleTableMixin
 from django_filters.views import FilterView
+from rest_framework import generics
 
 from todo.models import Task
 from todo.forms import ToDoForm
 from todo.tables import TaskTable
 from todo.filters import TaskFilter
+from todo.serializers import TaskSerializer
 
 
 # Create your views here.
@@ -33,6 +35,11 @@ class ToDoDetailView(DetailView):
     # permission_required = 'todo.view_tasks'
     model = Task
     template_name = 'detail.html'
+
+
+class ToDoRestDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
 
 
 class ToDoListView(SingleTableMixin, FilterView):
