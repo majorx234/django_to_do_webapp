@@ -11,8 +11,9 @@ class ToDoForm(ModelForm):
                                        "showClose": True,
                                        "showClear": True,
                                        "showTodayButton": True,
-                                  }
+                                   }
                               ))
+
     class Meta:
         model = Task
         fields = (

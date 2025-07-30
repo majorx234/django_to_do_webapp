@@ -63,4 +63,3 @@ class MainView(SingleTableMixin, FilterView):
     template_name = 'current_todo.html'
     model = Task
     table_class = TaskTable
-

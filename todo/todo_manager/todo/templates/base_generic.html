@@ -27,28 +27,28 @@
                 current
               </a>
             </li>
-          <li class="nav-item">
-            <a class="nav-link {% block create_active %} {% endblock %}" href="{% url 'create' %}">
-              create
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% block list_active %} {% endblock %}" href="{% url 'list' %}">
-              search
-            </a>
-          </li>
-        </ul>
+            <li class="nav-item">
+              <a class="nav-link {% block create_active %} {% endblock %}" href="{% url 'create' %}">
+                create
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% block list_active %} {% endblock %}" href="{% url 'list' %}">
+                search
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  {% block content %}
-  {% endblock %}
+    {% block content %}
+    {% endblock %}
 
-  <script type="text/javascript" src="{% static 'bootstrap/jquery-3.7.1.slim.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'bootstrap/popper-1.16.1.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'bootstrap/moment-with-locales.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'bootstrap_datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'bootstrap_datepicker_plus/js/datepicker-widget.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/jquery-3.7.1.slim.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/popper-1.16.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/moment-with-locales.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap_datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap_datepicker_plus/js/datepicker-widget.js' %}"></script>
   </body>
 </html>
