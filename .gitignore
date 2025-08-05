@@ -29,3 +29,5 @@ venv*/
 .emacs.desktop
 *.*~
 
+# django stuff
+*.sqlite3
