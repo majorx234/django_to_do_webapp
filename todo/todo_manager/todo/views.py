@@ -50,6 +50,11 @@ class ToDoListView(SingleTableMixin, FilterView):
     table_class = TaskTable
 
 
+class ToDoRestListView(generics.ListAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+
+
 class ToDoUpdateView(UpdateView):
     model = Task
     template_name = 'todo_update.html'
