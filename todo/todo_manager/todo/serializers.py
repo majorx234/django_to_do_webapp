@@ -7,14 +7,13 @@ class StatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = Status
         fields = ('id',
-                  'status_text',
-                  )
+                  'status_text')
 
 
 class ListSerializer(serializers.ModelSerializer):
     class Meta:
         model = List
-        fields = ('id'
+        fields = ('id',
                   'list_text')
 
 
@@ -23,7 +22,7 @@ class TaskSerializer(serializers.ModelSerializer):
         many=False,
         read_only=True
     )
-    list_items = StatusSerializer(
+    list_items = ListSerializer(
         many=False,
         read_only=True
     )
@@ -31,8 +30,8 @@ class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
         fields = ('id',
-                  'shorttext'
-                  'longtext'
-                  'till_when_date'
-                  'list_items'
+                  'shorttext',
+                  'longtext',
+                  'till_when_date',
+                  'list_items',
                   'status')

@@ -22,5 +22,5 @@ List.objects.create(list_text="SynthList").save()
 
 # Test
 ## Rest - interface
-- `curl -X 'GET' 'http://localhost:8000/todo/rest-list'`
-- `curl -X 'GET' 'http://localhost:8000/todo/rest-detail/1`
+- `curl -X 'GET' 'http://localhost:8000/todo/rest-list/'`
+- `curl -X 'GET' 'http://localhost:8000/todo/rest-detail/1/`
